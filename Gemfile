@@ -5,6 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'devise' #sign in & authentication
+gem 'rolify' # role management
+gem 'authority' #authority setting
+
+gem 'bootstrap-sass'
+gem 'simple_form'
+
+gem 'letter_opener', group: :development #Don't send email when it is on development
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'

@@ -1,0 +1,2 @@
+class MainviewController < ApplicationController
+end

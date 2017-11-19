@@ -14,7 +14,7 @@ class SpecsController < ApplicationController
   def create
     @spec = Spec.new(spec_params)
     if @spec.save
-      redirect_to specs_path, notice: "The spec has been successfully created."
+      redirect_to root_path, notice: "The spec has been successfully created."
     else
       render action: "new"
     end
@@ -27,10 +27,17 @@ class SpecsController < ApplicationController
   def update
     @spec = Spec.find(params[:id])
     if @spec.update_attributes(spec_params)
-      redirect_to specs_path, notice: "The spec has been successfully updated."
+      redirect_to root_path, notice: "The spec has been successfully updated."
     else
       render action: "edit"
     end
+  end
+
+  def destroy
+    @spec = Spec.find(params[:id])
+    @spec.destroy
+
+    redirect_to root_path
   end
 
 private

@@ -1,25 +1,39 @@
 <div class="container">
 
-
 	<div>
-		<h2 name="nw-profile">Profile</h2>
+		<section id="nw-profile">
+			<h2 class="hidden">Profile</h2>
+			<img src="/assets/profile_example.png" alt="Profile icon image" class="img-circle"><br>
 			<%= render :template => "specs/index" %>
-		
+		</section>
+		<hr>
+		<section id="nw-language">
+			<h2>Language skills</h2>
+		</section>
+		<hr>
 		<section id="nw-design">
-			<h2 name="nw-design">Design</h2>
+			<h2>Design</h2>
 			<%= render :template => "designs/index" %>
+		</section>
+		<hr>
+		<section id="nw-development">
+			<h2>Development</h2>
 		</section>
 	</div>
 
 </div>
+<hr>
 
 <footer>
+	<button class="sns-btn"><a href="https://www.linkedin.com/in/namwon-heo-20ba2679">LinkedIn</a></button>
 	<!--유저 로그인 -->
-	<% if user_signed_in? %>
-	  <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
-	  <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
-	<% else %>
-	  <p><%= link_to "로그인", new_user_session_path %></p>
-	<% end %>
+	<div class="login">
+		<% if user_signed_in? %>
+		  <p>현재 로그인된 유저: <%= current_user.email %><span>
+		  <%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
+		<% else %>
+		  <p><%= link_to "로그인", new_user_session_path %></p>
+		<% end %>
+	</div>
 	<!-- 로그인 끝 -->
 </footer>

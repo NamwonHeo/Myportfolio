@@ -1,4 +1,7 @@
-<%= link_to "New Design", new_design_path %><br>
+<div class="new-btn">
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"><%= link_to "New Design", new_design_path %></span>
+</div><br><br>
+
 <% @designs.each do |design| %>
 	<div class="column">
 		<div class="col-xs-6 col-md-3 thumbnail">

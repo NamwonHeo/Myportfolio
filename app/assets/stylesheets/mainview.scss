@@ -4,12 +4,23 @@
 
 section {
 	padding: 35px 0px 35px 0px;
-
+	margin: 0;
 }
 
 
-.sns-btn {
-	align: center;
+#logo-img {
+	text-align: center;
+}
+
+#profile-body {
+	text-align: center;
+}
+
+.spec-box {
+	width: 400px;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
 }
 
 .login {

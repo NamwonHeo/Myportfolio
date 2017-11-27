@@ -3,5 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .thumbnail {
-	margin: 0px 10px 0px 10px;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.new-btn {
+	float: right !important;
+	margin-right: 35px;
 }

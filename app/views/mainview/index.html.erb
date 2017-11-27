@@ -3,8 +3,18 @@
 	<div>
 		<section id="nw-profile">
 			<h2 class="hidden">Profile</h2>
-			<img src="/assets/profile_example.png" alt="Profile icon image" class="img-circle"><br>
-			<%= render :template => "specs/index" %><br><br>
+			<div id="logo-img">
+				<img src="/assets/profile_example.png" alt="Profile icon image" class="img-circle"><br>
+			</div>
+			<div id="profile-body">
+				<p>My name is Namwon</p>
+			</div>
+			<div class="container spec-box">
+				<button class="new-btn btn-default">
+					<%= link_to "New Spec", new_spec_path %>
+				</button><br><br>
+				<%= render :template => "specs/index" %>
+			</div>
 		</section><br>
 		<hr>
 		<section id="nw-language">
@@ -13,7 +23,12 @@
 		<hr>
 		<section id="nw-design">
 			<h2>Design</h2>
-			<%= render :template => "designs/index" %><br><br>
+			<button class="new-btn btn-default">
+				<%= link_to "New Design", new_design_path %>
+			</button><br><br>
+			<div class="container">
+				<%= render :template => "designs/index" %>
+			</div>
 		</section><br>
 		<hr>
 		<section id="nw-development">

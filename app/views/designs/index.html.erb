@@ -1,12 +1,17 @@
 <div class="container">
-<% @designs.each do |design| %>
-	<div class="column">
-		<div class="col-xs-6 col-md-3 thumbnail">
-			<a href="/designs/<%=design.id%>" >
-			<img src="..." alt="Image">
- 			<h4><%= design.title.html_safe %></h4>
- 			</a>
- 		</div>
- 	</div>
-<% end %>
+	<button class="new-btn btn-default">
+				<%= link_to "New Design", new_design_path %>
+	</button><br><br>
+
+	<% @designs.each do |design| %>
+		<div class="column">
+			<div id="design-thumbnail" class="col-xs-6 col-md-3 thumbnail">
+				<a href="/designs/<%=design.id%>" >
+				<img src="..." alt="Image">
+	 			<h4><%= design.title.html_safe %></h4>
+	 			</a>
+	 		</div>
+	 	</div>
+	<% end %>
+	
 </div>

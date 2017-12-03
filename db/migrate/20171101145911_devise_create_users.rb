@@ -1,6 +1,4 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
-  has_many :specs
-  has_many :designs
   def change
     create_table :users do |t|
       ## Database authenticatable

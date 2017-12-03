@@ -24,6 +24,7 @@
  
  @import "bootstrap";
 
+
 body {
 	display: block;
 	margin-left: 0px;
@@ -33,6 +34,10 @@ body {
  #nw-profile {
  	padding-top: 60px;
  }
+
+.submit-btn {
+	float: right;
+}
 
  span {
  	display: block;

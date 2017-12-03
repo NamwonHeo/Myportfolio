@@ -11,14 +11,16 @@
   </div>
   <div>
     <%= f.text_field :title %>
-  </div>
+  </div><br>
+
   <div>
     <%= f.label :body %>
   </div>
   <div>
     <%= f.cktext_area :body, rows: 10 %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
+  </div><br>
+
+  <button class="btn-default"><%= link_to "Back", :back %></button>
+  <div class="submit-btn"><%= f.submit %></div>
+
 <% end %>

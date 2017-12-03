@@ -4,10 +4,8 @@
 		<div id="logo-img">
 			<img src="/assets/profile_example.png" alt="Profile icon image" class="img-circle"><br>
 		</div>
-		<div id="profile-body">
-			<p>My name is Namwon</p>
-		</div>
 		<div>
+			<p id="profile-context">My name is Namwon</p>
 			<%= render :template => "specs/index" %>
 		</div>
 	</section><br>
@@ -24,16 +22,16 @@
 	</section><br>
 	<hr>
 	<section id="nw-development">
-		<div class="container">
+
 			<h2 class="mainview-title">Development</h2>
-		</div>
+
 	</section><br>
 </div>
 
 <hr>
 
 <footer>
-	<button class="sns-btn"><a href="https://www.linkedin.com/in/namwon-heo-20ba2679">LinkedIn</a></button>
+	<button class="sns-btn btn-default"><a href="https://www.linkedin.com/in/namwon-heo-20ba2679">LinkedIn</a></button>
 	<!--유저 로그인 -->
 	<div class="login">
 		<% if user_signed_in? %>

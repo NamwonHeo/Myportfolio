@@ -16,18 +16,23 @@ section {
 	text-align: center;
 }
 
-#profile-body {
+#profile-context {
 	text-align: center;
 }
 
-.spec-box {
-	
-	margin-left: 0;
-	margin-right: 0;
-	text-align: center;
+#spec-body {
+	width: 75%;
+	margin: auto;
+	padding: auto;
 }
+
+
 
 .login {
 	float: right;
 }
 
+.sns-btn {
+	display: block;
+	margin: 0 auto;
+}

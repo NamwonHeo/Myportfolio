@@ -1,18 +1,19 @@
-<div class="container">
-	
+<div id="spec-container" class="container">
 	<button class="new-btn btn-default">
 		<%= link_to "New Spec", new_spec_path %>
-	</button><br><br>
+	</button><br>
 	
 	<% @specs.each do |spec| %>
-	  <div class="column">
-	  	<div class="col-xs-6 col-md-3 thumbnail">
+	  <% if spec.id != Spec.last %>
+		  <div class="column">
 		  	<a href= "/specs/<%=spec.id%>">
-	  		<img src="..." alt="Image">
-			<h4><%= spec.title.html_safe %></h4>
-			</a>
-		</div>
-	  </div>
+			  	<div id="spec-thumbnail" class="col-xs-6 col-md-3 thumbnail">
+					<h4><%= spec.title.html_safe %></h4>
+				</div>
+			</a> 
+		  </div>
+	  <% else %>
+	  	<br>
+	  <% end %>
 	<% end %>
-
 </div>

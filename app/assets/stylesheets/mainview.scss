@@ -41,3 +41,105 @@ section {
 	display: block;
 	margin: 0 auto;
 }
+
+
+#profile-context {
+	font-size: 200%
+}
+
+
+#profile-image {
+	align: center;
+	width: 300px;
+	height: 300px;
+	margin:  20px;	
+}
+
+
+@media only screen and (max-width : 992px),
+only screen and (max-device-width : 992px){
+	#profile-image {
+	align: center;
+	width: 280px;
+	height: 280px;
+	margin:  16px;
+	}
+}
+ 
+@media only screen and (max-width : 768px),
+only screen and (max-device-width : 768px){
+	#profile-image {
+	align: center;
+	width: 230px;
+	height: 230px;
+	margin:  12px;	
+	}
+}
+ 
+@media only screen and (max-width : 530px),
+only screen and (max-device-width : 530px){
+	#profile-image {
+	align: center;
+	width: 180px;
+	height: 180px;
+	margin:  10px;	
+	}
+}
+ 
+@media only screen and (max-width : 400px),
+only screen and (max-device-width : 400px){
+	#profile-image {
+	align: center;
+	width: 150px;
+	height: 150px;
+	margin:  10px;	
+	}
+}
+
+.flag {
+	float: left;
+	width: 20%;
+	height: 150px;
+	margin:  10px 2.5% 10px 2.5%;	
+}
+
+
+@media only screen and (max-width : 992px),
+only screen and (max-device-width : 992px){
+	.flag {
+	float: left;
+	width: 20%;
+	height: 160px;
+	margin:  10px 2.5% 10px 2.5%;
+	}
+}
+ 
+@media only screen and (max-width : 768px),
+only screen and (max-device-width : 768px){
+	.flag {
+	float: left;
+	width: 46%;
+	height: 140px;
+	margin:  10px 2% 10px 2%;	
+	}
+}
+ 
+@media only screen and (max-width : 530px),
+only screen and (max-device-width : 530px){
+	.flag {
+	float: left;
+	width: 48%;
+	height: 130px;
+	margin:  10px 1% 10px 1%;	
+	}
+}
+ 
+@media only screen and (max-width : 400px),
+only screen and (max-device-width : 400px){
+	.flag {
+	float: left;
+	width: 48%;
+	height: 110px;
+	margin:  5px 1% 5px 1%;	
+	}
+}

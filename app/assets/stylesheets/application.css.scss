@@ -16,11 +16,11 @@
 
  $light-sky: #d8f7ff;
  $navbar-default-color: $light-sky;
- $navbar-default-bg: #293370;
- $navbar-default-link-color: gray;
+ $navbar-default-bg: #1677CB;
+ $navbar-default-link-color: black;
  $navbar-default-link-active-color: $light-sky;
  $navbar-default-link-hover-color: white;
- $navbar-default-link-hover-bg: black;
+ $navbar-default-link-hover-bg: #033362;
  
  @import "bootstrap";
 
@@ -29,6 +29,7 @@ body {
 	display: block;
 	margin-left: 0px;
 	margin-right: 0px;
+	background-color: #f6f4f4;
 }
 
  #nw-profile {

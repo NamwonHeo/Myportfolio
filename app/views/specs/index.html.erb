@@ -1,7 +1,9 @@
 <div id="spec-container" class="container">
-	<button class="new-btn btn-default">
-		<%= link_to "New Spec", new_spec_path %>
-	</button><br>
+	<% if user_signed_in? %>
+		<button class="new-btn btn-default">
+			<%= link_to "New Spec", new_spec_path %>
+		</button><br>
+	<% end %>
 	
 	<% @specs.each do |spec| %>
 	  <% if spec.id != Spec.last %>

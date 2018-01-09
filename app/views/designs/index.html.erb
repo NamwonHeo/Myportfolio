@@ -1,7 +1,9 @@
 <div class="container">
-	<button class="new-btn btn-default">
-				<%= link_to "New Design", new_design_path %>
-	</button><br><br>
+	<% if user_signed_in? %>
+		<button class="new-btn btn-default">
+			<%= link_to "New Design", new_design_path %>
+		</button><br><br>
+	<% end %>
 
 	<% @designs.each do |design| %>
 		<div class="column">

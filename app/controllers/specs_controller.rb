@@ -1,4 +1,6 @@
 class SpecsController < ApplicationController
+  before_action :authenticate, except: [:index, :show]
+
   def index
     @specs = Spec.order("created_at DESC")
   end

@@ -1,4 +1,6 @@
 class DesignsController < ApplicationController
+  before_action :authenticate, except: [:index, :show]
+
 	def index
     	@designs = Design.order("created_at DESC")
   	end

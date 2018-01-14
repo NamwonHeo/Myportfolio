@@ -4,6 +4,6 @@
 
 <%= link_to "Back", :back %>
 <% if user_signed_in? %>
-	<%= link_to "Edit", edit_design_path(@design) %>
-	<%= link_to "Delete", design_path(@design), method: :delete, data: { confirm: 'Are you sure?'} %>
+	<%= link_to "Edit", edit_design_path(@design) if @design.updatable_by? current_user %>
+	<%= link_to "Delete", design_path(@design), method: :delete, data: { confirm: 'Are you sure?'} if @design.deletable_by? current_user %>
 <% end %>

@@ -4,4 +4,9 @@ class ApplicationController < ActionController::Base
   def authenticate
   	redirect_to new_user_session_path unless user_signed_in?
   end
+
+  def authority_forbidden(error)
+  Authority.logger.warn(error.message)
+  redirect_to request.referrer.presence || root_path, :alert => 'You are not authorized to complete that action.'
+end
 end

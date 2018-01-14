@@ -1,5 +1,6 @@
 class DesignsController < ApplicationController
   before_action :authenticate, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
 	def index
     	@designs = Design.order("created_at DESC")
@@ -15,6 +16,8 @@ class DesignsController < ApplicationController
 
     def create
     	@design = Design.new(design_params)
+      @design.user = current_user
+      
     	if @design.save
       		redirect_to root_path, notice: "The design has been successfully created."
     	else
@@ -24,10 +27,12 @@ class DesignsController < ApplicationController
 
     def edit
     	@design = Design.find(params[:id])
+      authorize_action_for @design
     end
 
     def update
     	@design = Design.find(params[:id])
+      authorize_action_for @design
     	if @design.update_attributes(design_params)
     		redirect_to root_path, notice: "The design has been successfully updated."
     	else
@@ -37,6 +42,7 @@ class DesignsController < ApplicationController
 
     def destroy
       @design = Design.find(params[:id])
+      authorize_action_for @design
       @design.destroy
 
       redirect_to root_path

@@ -1,5 +1,6 @@
 class SpecsController < ApplicationController
   before_action :authenticate, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @specs = Spec.order("created_at DESC")
@@ -15,6 +16,8 @@ class SpecsController < ApplicationController
 
   def create
     @spec = Spec.new(spec_params)
+    @spec.user = current_user
+    
     if @spec.save
       redirect_to root_path, notice: "The spec has been successfully created."
     else
@@ -24,10 +27,12 @@ class SpecsController < ApplicationController
 
   def edit
     @spec = Spec.find(params[:id])
+    authorize_action_for @spec
   end
 
   def update
     @spec = Spec.find(params[:id])
+    authorize_action_for @spec
     if @spec.update_attributes(spec_params)
       redirect_to root_path, notice: "The spec has been successfully updated."
     else
@@ -37,6 +42,7 @@ class SpecsController < ApplicationController
 
   def destroy
     @spec = Spec.find(params[:id])
+    authorize_action_for @spec
     @spec.destroy
 
     redirect_to root_path

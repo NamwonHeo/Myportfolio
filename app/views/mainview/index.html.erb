@@ -1,4 +1,10 @@
 <div>
+	<% flash.each do |type, message| %>
+	  <div class="alert <%= bootstrap_class_for(type) %> alert-dismissable fade in">
+	    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	    <%= message %>
+	  </div>
+	<% end %>
 	<section id="nw-profile">
 		<h2 class="hidden">Profile</h2>
 		<div id="logo-img">
@@ -7,6 +13,8 @@
 		<div id="profile-context">
 			<p>Hi! I'm Namwon</p>
 			<p> Curious, Logical, Intuitive</p>
+		</div>
+		<div>
 			<%= render :template => "specs/index" %>
 		</div>
 	</section><br>
@@ -43,7 +51,7 @@
 	<!--유저 로그인 -->
 	<div class="login">
 		<% if user_signed_in? %>
-		  <p>현재 로그인된 유저: <%= current_user.email %><span>
+		  <p>현재 로그인된 유저: <%= current_user.email %><span><%= link_to "Roles: " + user_roles(current_user), '#' %><span>
 		  <%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
 		<% else %>
 		  <p><%= link_to "로그인", new_user_session_path %></p>

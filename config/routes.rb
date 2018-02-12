@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'lip/index'
+
   resources :designs
   resources :specs
   mount Ckeditor::Engine => '/ckeditor'

@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.5.3'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
 
 gem 'devise' #sign in & authentication
 gem 'rolify' # role management
@@ -15,7 +11,7 @@ gem 'simple_form'
 
 gem 'letter_opener', group: :development #Don't send email when it is on development
 
-gem 'ckeditor'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
